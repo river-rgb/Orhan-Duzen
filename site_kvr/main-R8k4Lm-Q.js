@@ -1,0 +1,1 @@
+export function h(tag, attrs, children){const e=document.createElement(tag);if(attrs){Object.keys(attrs).forEach(k=>{if(k==='class')e.className=attrs[k];else if(k==='text')e.textContent=attrs[k];else e.setAttribute(k,attrs[k])})}if(children){children.forEach(c=>e.appendChild(typeof c==='string'?document.createTextNode(c):c))}return e}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="referrer" content="origin" />
+    <meta name="theme-color" content="#fff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link id="pwa-manifest-placeholder" rel="manifest" href="" />
+    <script>
+      window.APP_FRONTEND_FAKE_BACKEND_MODE = false;
+      window.APP_PAGE_SUSPEND_DETECTED = document.visibilityState === 'hidden'
+      function _detectVisibilityChange() {
+        if (document.visibilityState === 'hidden') {
+          window.APP_PAGE_SUSPEND_DETECTED = true
+          document.removeEventListener('visibilitychange', _detectVisibilityChange)
+        }
+      }
+      if (document.visibilityState === 'visible') {
+        document.addEventListener('visibilitychange', _detectVisibilityChange)
+      }
+    </script>
+    <script>
+      function _getCookie(name) {
+        var nameEq = (name += '=')
+        var ca = document.cookie.split(';')
+        for (var i = 0; i < ca.length; i++) {
+          var c = ca[i]
+          while (c.charAt(0) === ' ') c = c.substring(1, c.length)
+          if (c.indexOf(nameEq) === 0) return c.substring(nameEq.length, c.length)
+        }
+      }
+      function _getSessionTokenCookie() {
+        var v = _getCookie('__Host-sessionToken')
+        return v !== undefined ? v : _getCookie('sessionToken')
+      }
+    </script>
+    <script>
+      function parseAsBool(envValue, defaultValue) {
+        if (envValue === 'true') return true
+        if (envValue === 'false') return false
+        return defaultValue
+      }
+      APP_SANDBOX_DOMAIN = location.origin
+      ALLOW_SAME_ORIGIN_OPTION = parseAsBool('true', false)
+      MAIN_DOMAIN = location.hostname
+      SAML_ENABLED = parseAsBool('false', false)
+      CLIENT_ID = ''
+      RESTRICTED_DOMAIN = ''
+      DISABLE_USER_PASS_LOGIN = parseAsBool('false', false)
+      INCLUDE_COOKIES_IN_API_CALLS = ''
+      VERSION_CONTROL_LOCKED = parseAsBool('false', false)
+      IS_ADMIN = parseAsBool('false', false)
+      WEBPACK_SHARED_BUILD_VERSION = '354057_844936b'
+      STATSD_HOST = '__STATSD_HOST__'
+      APP_VARIANT = 'vite'
+      const appVersionForServiceWorker = '4.18.0-844936b (Build 354057)'
+      console.log('Running ViteJS app variant')
+      VITE_RUNTIME_HTML = 'runtime.M2M3OWU5.html'
+      window.htmlLoadedAt = performance.now()
+    </script>
+
+    <link rel="modulepreload" crossorigin href="site_kvr/routeAssumptions-W3f9KqLA.js">
+    <link rel="modulepreload" crossorigin href="site_kvr/main-R8k4Lm-Q.js">
+    <link rel="stylesheet" crossorigin href="site_kvr/main-T5pN7xVC.css">
+  </head>
+  <body>
+    <script>var entrypointChunk = 'site_kvr/src-index-M7v2QaFR.js'</script>
+
+    <div id="root" style="height: 100%"></div>
+    <div
+      id="translationToolDetectionId"
+      style="position: absolute; left: -9999px; top: -9999px; visibility: hidden; z-index: -100"
+    >
+      This is some invisible text to see if a translation tool is being used
+    </div>
+    <script></script>
+
+    <script>
+      function errorHandler() {
+        var url = this._url
+        var retryCount
+        var storedRetryCount = localStorage.getItem('entrypoint-chunk-retry-count')
+        if (storedRetryCount !== null) retryCount = parseInt(storedRetryCount)
+        else retryCount = 0
+        if (retryCount < 5) {
+          localStorage.setItem('entrypoint-chunk-retry-count', retryCount + 1)
+          window.location.reload()
+        }
+      }
+      function createScriptElement(url) {
+        var scriptTag = document.createElement('script')
+        scriptTag.onerror = errorHandler
+        scriptTag.type = 'module'
+        scriptTag.crossorigin = 'crossorigin'
+        scriptTag._url = url
+        scriptTag.src = url
+        scriptTag.setAttribute('data-marker', 'entrypoint-chunk')
+        return scriptTag
+      }
+      if (entrypointChunk !== undefined) {
+        document.body.appendChild(createScriptElement(entrypointChunk))
+      }
+    </script>
+  </body>
+</html>

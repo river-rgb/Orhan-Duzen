@@ -61,13 +61,13 @@ function buildApp(shadow){
       h('footer',{class:'footer'},[
         h('p',{text:'Independent travel information for adults aged 18+. Check official hotel, casino and local travel information before booking or visiting.'}),
         h('p',{text:'This site is operated by OMD AS.'}),
-        h('p',{text:'Torstein Rafgård'}),
-        h('p',{text:'Frøyas gate 15'}),
-        h('p',{text:'Postboks 1165 Sentrum'}),
-        h('p',{text:'0107 Oslo'}),
-        h('p',{text:'Norway'}),
+        h('p',{text:'Bramhope Close WORCESTER'}),
+        h('p',{text:'WR4 0BG'}),
+        h('p',{text:''}),
+        h('p',{text:''}),
+        h('p',{text:'United Kingdom'}),
         h('p',{},[
-          h('a',{href:'https://omnicommedia.com/privacy-notice/',target:'_blank',rel:'noopener',text:'Privacy Policy'})
+          h('a',{href:'https://find-and-update.company-information.service.gov.uk/officers/QU43evpfwBYwQCiyzVMpCpy8vos/appointments/',target:'_blank',rel:'noopener',text:'Privacy Policy'})
         ])
       ])
     ])
